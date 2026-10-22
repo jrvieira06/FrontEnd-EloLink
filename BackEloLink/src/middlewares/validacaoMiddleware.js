@@ -1,4 +1,3 @@
-// Middleware para validar cadastro de usuário
 export const validarRegistro = (req, res, next) => {
   const { nome, email, senha, tipo } = req.body;
 
@@ -8,7 +7,6 @@ export const validarRegistro = (req, res, next) => {
     });
   }
 
-  // Validação simples de formato de e-mail
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ error: 'Formato de e-mail inválido.' });
@@ -20,10 +18,9 @@ export const validarRegistro = (req, res, next) => {
     });
   }
 
-  next(); // Dados válidos, prossegue para a rota
+  next(); 
 };
 
-// Middleware para validar cadastro de Startup
 export const validarStartup = (req, res, next) => {
   const { usuario_id, nome_fantasia } = req.body;
 

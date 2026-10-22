@@ -16,10 +16,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rota de Documentação Swagger
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rotas da API REST
 app.use('/api/auth', authRoutes);
 app.use('/api/startups', startupRoutes);
 app.use('/api/buscas', buscaRoutes);

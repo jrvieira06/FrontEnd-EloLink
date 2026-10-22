@@ -61,7 +61,6 @@ const router = Router();
  *         description: Startup excluída com sucesso
  */
 
-// 1. GET /api/startups - Listar todas
 router.get('/', async (req, res) => {
   const { data, error } = await supabase.from('startups').select('*');
 
@@ -72,7 +71,6 @@ router.get('/', async (req, res) => {
   return res.status(200).json(data);
 });
 
-// 2. GET /api/startups/:id - Buscar por ID
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
 
@@ -89,7 +87,6 @@ router.get('/:id', async (req, res) => {
   return res.status(200).json(data);
 });
 
-// 3. POST /api/startups - Criar Startup (Livre para interagir no Swagger)
 router.post('/', validarStartup, async (req, res) => {
   const {
     usuario_id,
@@ -124,7 +121,6 @@ router.post('/', validarStartup, async (req, res) => {
   return res.status(201).json(data);
 });
 
-// 4. DELETE /api/startups/:id - Deletar Startup (Livre para interagir no Swagger)
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
 

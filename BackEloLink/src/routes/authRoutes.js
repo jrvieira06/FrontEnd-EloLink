@@ -86,7 +86,6 @@ router.post('/login', async (req, res) => {
     return res.status(400).json({ error: 'E-mail e senha são obrigatórios.' });
   }
 
-  // Busca o usuário no Supabase
   const { data: usuario, error } = await supabase
     .from('usuarios')
     .select('*')
@@ -97,7 +96,6 @@ router.post('/login', async (req, res) => {
     return res.status(401).json({ error: 'E-mail ou senha inválidos.' });
   }
 
-  // Gera o Token JWT com validade de 24 horas
   const token = jwt.sign(
     { id: usuario.id, email: usuario.email, tipo: usuario.tipo },
     process.env.JWT_SECRET || 'chave_secreta_padrao',
