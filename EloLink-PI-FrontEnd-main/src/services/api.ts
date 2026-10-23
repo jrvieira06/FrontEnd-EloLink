@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://backend-elolink.onrender.com';
 
 export const api = {
   login: async (email: string, senha: string) => {
