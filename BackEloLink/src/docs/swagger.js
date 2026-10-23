@@ -14,16 +14,14 @@ const options = {
      },
     servers: [
       {
+        url: 'https://elolink-k7km.onrender.com',
+        description: 'Servidor de Produção (Render)',
+      },
+      {
         url: 'http://localhost:3000',
         description: 'Servidor Local de Desenvolvimento',
       },
     ],
-    tags: [
-      {
-        name: 'Autenticação',
-        description: 'Gestão de usuários e cadastros',
-      },
-      {
         name: 'Startups',
         description: 'CRUD completo para perfil e informações de Startups',
       },
